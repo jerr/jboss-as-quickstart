@@ -26,7 +26,7 @@ import javax.naming.NamingException;
 import org.jboss.as.quickstarts.mbeanhelloworld.service.HelloService;
 
 /**
- * Mbean poja using .MXBean interface and declared in jboss-service.xml.
+ * Mbean pojo using MXBean interface and declared in jboss-service.xml.
  * 
  * @author Jérémie Lagarde
  * 
