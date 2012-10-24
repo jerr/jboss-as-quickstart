@@ -36,23 +36,23 @@ public class MXPojoHelloWorld  implements IHelloWorldMXBean  {
 	private String welcomeMessage = "Hello";
 	private long count = 0;
 
-	// @Override
+	@Override
 	public long getCount() {
 		return count;
 	}
 
-	// @Override
+	@Override
 	public void setWelcomeMessage(String message) {
 		if (message != null && message.trim().length() > 0)
 			welcomeMessage = message;
 	}
 
-	// @Override
+	@Override
 	public String getWelcomeMessage() {
 		return welcomeMessage;
 	}
 
-	// @Override
+	@Override
 	public String sayHello(String name) {
 		count++;
 		Context context = null;
@@ -67,6 +67,7 @@ public class MXPojoHelloWorld  implements IHelloWorldMXBean  {
 			helloService = (HelloService) beanManager.getReference(bean, bean.getClass(), ctx);
 			return helloService.createHelloMessage(welcomeMessage, name);
 		} catch (NamingException e) {
+			e.printStackTrace();
 		}finally {
 			if (context != null) {
 				try {
